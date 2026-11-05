@@ -1,0 +1,4 @@
+[submodule "spatial-annotations"]
+	path = spatial-annotations
+	url = https://github.com/ahjcgit/spatial-annotations.git
+	branch = main
