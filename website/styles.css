@@ -73,6 +73,10 @@ footer { margin-top: 32px; border-top: 1px solid var(--line); padding: 20px 0 32
   h1 { font-size: 28px; letter-spacing: -.5px; margin-top: 28px; }
   h1 br { display: none; }
   .overview { font-size: 15px; }
+  .summary-table { min-width: 0; }
+  .summary-table th, .summary-table td { padding: 9px 8px; font-size: 12px; }
+  .summary-table th:first-child { width: 48%; }
+  .summary-table th span { font-size: 10px; }
   h2 { font-size: 20px; }
   .method { grid-template-columns: 1fr; gap: 3px; }
   dd { margin-bottom: 12px; }
