@@ -1,11 +1,12 @@
 'use strict';
-// Filtering changes only which measured trials are visible; never the values.
-const filters = document.querySelectorAll('[data-filter]');
-const rows = document.querySelectorAll('tbody tr[data-object]');
-for (const button of filters) button.addEventListener('click', () => {
-  const selected = button.dataset.filter;
-  for (const filter of filters) filter.setAttribute('aria-pressed', String(filter === button));
+const filter = document.getElementById('object-filter');
+const rows = document.querySelectorAll('.trial-table tbody tr[data-object]');
+filter.addEventListener('change', () => {
   let count = 0;
-  for (const row of rows) { row.hidden = selected !== 'all' && row.dataset.object !== selected; if (!row.hidden) count++; }
-  document.getElementById('filter-status').textContent = `Showing ${selected === 'all' ? 'all ' : ''}${count} ${count === 1 ? 'trial' : 'trials'}${selected === 'all' ? '.' : ' · ' + button.textContent + '.'}`;
+  for (const row of rows) {
+    row.hidden = filter.value !== 'all' && row.dataset.object !== filter.value;
+    if (!row.hidden) count++;
+  }
+  document.getElementById('filter-status').textContent =
+    `Showing ${count} ${count === 1 ? 'trial' : 'trials'} for ${filter.selectedOptions[0].textContent.toLowerCase()}.`;
 });
