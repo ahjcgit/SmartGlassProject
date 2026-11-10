@@ -1,18 +1,20 @@
 # Smart Glass Project
 
-Glasses experiments and capability tests.
+Shared spatial annotations on RayNeo smart glasses — UCLA ECE M202A.
 
-## Spatial annotations
+## Experiment and current results
 
-[Browse the spatial annotations experiment](https://github.com/ahjcgit/spatial-annotations#readme)
-— a RayNeo Android app, FastAPI backend, and browser companion for QR-linked notes.
-It tests camera scanning, display/input, and multi-user sharing. Notes use a
-screen-space panel; world tracking and persistent AR anchors are not implemented.
+[Project website](https://ahjcgit.github.io/SmartGlassProject/) · [Website source and publishing guide](website/README.md)
 
-The experiment is contained in the [`spatial-annotations/`](./spatial-annotations)
-Git submodule. It has its own setup instructions, dependencies, tests, and history.
-On GitHub, clicking that directory opens the pinned experiment revision; the link
-above opens the latest version.
+The November 10 Milestone 3 pilot contains **11 physical-camera trials and 229 sampled frames** of a sanitizer bottle, a toy motorcycle, and an empty scene. The site presents condition-level detection results, a paired NanoDet / YOLOX-S recorded-image comparison, CPU processing times, annotation provenance, and limitations. The larger detector improved recognition in these scenes but took about five times longer per median CPU model call. Results are preliminary: one instance per class, one trial per condition, and 211 of 229 reference annotations await independent human verification.
+
+## Spatial annotations application
+
+[Browse the application and setup guide](https://github.com/ahjcgit/spatial-annotations/blob/a4b59406fc0871657621972ffbf2693e544329e9/README.md)
+
+The native Android client, FastAPI/SQLite backend, and browser companion support persistent public, private, and group notes. The current live demonstration uses RayNeo color capture and computer-hosted category detection with explicit selection of the registered object. QR UUIDs remain available for unique instance identity. Category detection alone cannot distinguish identical objects. World tracking and persistent AR anchors are not implemented.
+
+The application is the [`spatial-annotations/`](./spatial-annotations) Git submodule, with its own setup, tests, and history. Its pinned revision may differ from the current experiment revision linked above.
 
 ## Clone and run
 
