@@ -1,4 +1,4 @@
 [submodule "spatial-annotations"]
 	path = spatial-annotations
 	url = https://github.com/ahjcgit/spatial-annotations.git
-	branch = experiment/h0-h4-identity
+	branch = experiment/codex-glasses-latency
